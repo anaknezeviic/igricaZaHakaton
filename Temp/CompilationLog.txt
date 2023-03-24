@@ -1,0 +1,4 @@
+# Starting compiling UnityEngine.TestRunner.dll
+/home/ana/Unity/Hub/Editor/2020.3.46f1/Editor/Data/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-2d485ede8102fc6d296355b18a3dcd0d
+# Starting compiling UnityEngine.UI.dll
+/home/ana/Unity/Hub/Editor/2020.3.46f1/Editor/Data/Tools/RoslynScripts/unity_csc.sh /noconfig @Temp/UnityTempFile-57e1ed116b33ebeb5956bec0336bc9a3
