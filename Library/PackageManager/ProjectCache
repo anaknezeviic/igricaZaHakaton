@@ -5,7 +5,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638152846771422941
+=======
+      ticks: 638152845027698831
+>>>>>>> Stashed changes
     m_Hash: 2208504264
   m_LockFileStatus:
     m_FilePath: C:/Users/bogda/Desktop/igricaZaHakaton/Packages/packages-lock.json
@@ -13,7 +17,11 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
+<<<<<<< Updated upstream
       ticks: 638152846771432963
+=======
+      ticks: 638152845027698831
+>>>>>>> Stashed changes
     m_Hash: 740311341
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
