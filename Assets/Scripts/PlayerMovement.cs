@@ -1,43 +1,52 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Player movement speed
-    public float gravity = -9.81f; // Gravity force
-    public float jumpHeight = 2f; // Jump height
+    public float speed = 5f; // The speed of the object
+    public float jumpForce = 10f; // The force of the jump
+    private Rigidbody rb; // Reference to the Rigidbody component
 
-    CharacterController controller;
-    Vector3 velocity; // Player velocity vector
-
-    void Start()
+    private void Start()
     {
-        controller = GetComponent<CharacterController>(); // Get reference to player's CharacterController component
+        // Get the reference to the Rigidbody component
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        float horizontalInput = Input.GetAxis("Horizontal"); // Get horizontal input from keyboard
-        float verticalInput = Input.GetAxis("Vertical"); // Get vertical input from keyboard
+        // Get the horizontal and vertical input axis
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput); // Create movement vector from input
-        movement = transform.TransformDirection(movement); // Transform movement vector from local space to world space
-        movement *= moveSpeed * Time.deltaTime; // Apply speed to movement vector
+        // Create a movement vector based on the input and the speed
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * speed * Time.fixedDeltaTime;
 
-        if (controller.isGrounded) // Check if player is on ground
+        // Apply the movement vector to the Rigidbody component
+        rb.MovePosition(rb.position + movement);
+
+        // Check if the player presses the Jump button
+        if (Input.GetButtonDown("Jump"))
         {
-            velocity.y = 0f; // Reset y velocity
-
-            if (Input.GetButtonDown("Jump")) // Check for jump input
+            // Apply an upward force to the Rigidbody component
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+    private void OnCollisionEnter(Collision other) {
+        if(other.gameObject.tag == "door")
+        {
+            System.Random random = new System.Random();
+            int randomNumber = random.Next(1, 4);
+            if(randomNumber == 2)
+                GameBehavior.Instance.SceneToMoveTo("dobraScena");
+            else
             {
-                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity); // Calculate initial jump velocity
+                string[] KVIZ = {"KVIZ", "KVIZ 1", "KVIZ 2", "KVIZ 3", "KVIZ 4", "KVIZ 5"};
+                randomNumber = random.Next(1, 7);
+                GameBehavior.Instance.SceneToMoveTo(KVIZ[randomNumber-1]);
             }
         }
-
-        velocity.y += gravity * Time.deltaTime; // Apply gravity to y velocity
-        movement += velocity * Time.deltaTime; // Add gravity to movement vector
-
-        controller.Move(movement); // Move player using CharacterController component
     }
 }
