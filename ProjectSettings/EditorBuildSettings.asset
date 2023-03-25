@@ -4,5 +4,35 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LoadScreen.unity
+    guid: 24f22fe157fa5626b95c9d654a5f00fc
+  - enabled: 1
+    path: Assets/Scenes/Movement.unity
+    guid: ecfd1427066c2764aa30f32e7c85a8ef
+  - enabled: 1
+    path: Assets/Scenes/KVIZ.unity
+    guid: 1172d35079ad5ed43b537e92bf33c600
+  - enabled: 1
+    path: Assets/Scenes/dobraScena.unity
+    guid: f9dbdb3d53ffec615b221eb219a3b3dd
+  - enabled: 1
+    path: Assets/Scenes/losaScena.unity
+    guid: e1c91317bbfe110098d65338a2e9deac
+  - enabled: 1
+    path: Assets/Scenes/KVIZ 1.unity
+    guid: de4c89a2f45658c4fb51e9ef46b51205
+  - enabled: 1
+    path: Assets/Scenes/KVIZ 2.unity
+    guid: 84638e53eaa77f44293ae07547e5a87e
+  - enabled: 1
+    path: Assets/Scenes/KVIZ 3.unity
+    guid: c956ec22a19b96e4d9ccba0f7dc9baeb
+  - enabled: 1
+    path: Assets/Scenes/KVIZ 4.unity
+    guid: 937aa3340a36727438a8b9d17ad6fee8
+  - enabled: 1
+    path: Assets/Scenes/KVIZ 5.unity
+    guid: 0fda861c7cced8844a46aaa7ff3c804f
   m_configObjects: {}
